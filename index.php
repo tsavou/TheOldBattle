@@ -1,14 +1,10 @@
 <?php
+$json = file_get_contents("characters.json");
+$characters = json_decode($json, true);
+
 include("header.php");
-include("src/classes.php");
-//choix de l'adversaire
+
 $ennemy = $characters[rand(0, count($characters) - 1)];
-
-session_start();
-
-// Réinitialiser les données de santé lorsque vous commencez un nouveau combat
-unset($_SESSION['ennemy_hp']);
-unset($_SESSION['my_hp']);
 
 ?>
 
@@ -21,12 +17,12 @@ unset($_SESSION['my_hp']);
         foreach ($characters as $character) {
         ?>
             <div class="character-card">
-                <a href="battle.php?id=<?= $character->id ?>&name=<?= $character->name ?>&versus=<?= $ennemy->id ?>&ennemy=<?= $ennemy->name ?>">
-                    <img src="<?= $character->img ?>" alt="<?= $character->name ?>">
+                <a href="battle.php?id=<?= $character["id"] ?>&name=<?= $character["name"] ?>&versus=<?= $ennemy["id"] ?>&ennemy=<?= $ennemy["name"] ?>">
+                    <img src="<?= $character["img"] ?>" alt="<?= $character["name"] ?>">
                 </a>
 
-                <p class="name"><?= $character->name ?></p>
-                <div class="puissance flex"><?= $character->puissance ?></div>
+                <p class="name"><?= $character["name"] ?></p>
+                <div class="puissance flex"><?= $character["puissance"] ?></div>
 
 
             </div>
