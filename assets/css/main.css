@@ -1,0 +1,275 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "starjedi";
+  src: url(../fonts/starjedi-webfont.woff) format("woff");
+  src: url(../fonts/starjedi-webfont.woff2) format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  background-image: url(../img/arene.jpg);
+  background-size: cover;
+  height: 100vh;
+  font-family: "starjedi";
+  color: #111111;
+}
+
+a {
+  text-decoration: none;
+  color: #111111;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  padding: 0 3rem;
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    padding: 0 10rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  .container {
+    padding: 0;
+  }
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.4rem;
+}
+
+li {
+  list-style: none;
+}
+
+header {
+  padding: 1rem 0;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.characters {
+  flex-wrap: wrap;
+  gap: 2%;
+  padding: 3rem 0;
+}
+
+.character-card {
+  flex-basis: calc(12.5% - 3rem);
+  position: relative;
+  margin-bottom: 2rem;
+  transition: all 0.2s;
+}
+.character-card:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+@media screen and (max-width: 576px) {
+  .character-card {
+    flex-basis: calc(50% - 3rem);
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .character-card {
+    flex-basis: calc(25% - 3rem);
+  }
+}
+.character-card img {
+  object-fit: cover;
+  object-position: top;
+  height: 150px;
+  border: solid 2px #ffffff;
+}
+@media screen and (min-width: 1400px) {
+  .character-card img {
+    height: 200px;
+  }
+}
+.character-card .name {
+  font-size: 1.3rem;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: #111111 1rem 1rem 1rem;
+  margin: 0;
+  padding: 0;
+}
+.character-card .puissance {
+  border: solid 1px #111111;
+  border-radius: 50%;
+  padding: 0.4rem;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: -5%;
+  left: -7%;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+}
+@media screen and (max-width: 576px) {
+  .character-card .puissance {
+    font-size: 1.3rem;
+    left: -2%;
+  }
+}
+
+.battle {
+  justify-content: space-between;
+  gap: 2%;
+}
+@media screen and (max-width: 992px) {
+  .battle {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.player {
+  position: relative;
+  flex-basis: calc(33.3333333333% - 3rem);
+}
+.player h3 {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.player .puissance {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  padding: 1rem;
+  position: absolute;
+  top: 5%;
+  left: -5%;
+  align-items: center;
+  background-color: #111111;
+}
+.player img {
+  object-fit: cover;
+  object-position: top;
+  height: 400px;
+  border: solid 2px #ffffff;
+}
+@media screen and (min-width: 1400px) {
+  .player img {
+    height: 600px;
+  }
+}
+
+.health-bar {
+  width: 100%;
+  height: 20px;
+  border: 1px solid #000;
+  margin-top: 1rem;
+}
+
+.left .puissance {
+  color: #03ba03;
+  border: #03ba03 solid 2px;
+}
+
+.right .puissance {
+  color: #a80404;
+  border: #a80404 solid 2px;
+}
+
+.versus {
+  text-align: center;
+  flex-basis: calc(33.3333333333% - 3rem);
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.versus ul {
+  font-family: Arial, Helvetica, Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgba(0, 0, 0, 0.6117647059);
+  padding: 1rem;
+  border-radius: 30px;
+  color: #ffffff;
+}
+.versus ul li {
+  margin: 1rem 0;
+  text-wrap: wrap;
+  line-height: 1.5;
+}
+.versus ul .my-player strong {
+  color: #03ba03;
+}
+.versus ul .ennemy strong {
+  color: #a80404;
+}
+.versus .newgame {
+  color: #ffffff;
+  background-color: #111111;
+  border-radius: 30px;
+  padding: 1rem;
+  cursor: pointer;
+  width: fit-content;
+}
+.versus .newgame:hover {
+  scale: 1.1;
+}
+
+.attacks {
+  display: flex;
+  gap: 2%;
+  align-items: center;
+}
+.attacks h3 {
+  font-size: 1.6rem;
+  color: #ffffff;
+}
+.attacks ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-wrap: nowrap;
+  gap: 2%;
+  font-size: 1rem;
+}
+.attacks ul li a {
+  background-color: #ffffff;
+  border-radius: 30px;
+  padding: 1rem;
+  cursor: pointer;
+}
+.attacks ul li:hover {
+  scale: 1.1;
+}
+.attacks ul #escape {
+  background-color: #a80404;
+  color: #ffffff;
+}
+
+/*# sourceMappingURL=main.css.map */

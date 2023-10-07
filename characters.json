@@ -1,0 +1,345 @@
+[
+    {
+        "id": 1,
+        "name": "Gandalf",
+        "img":"assets/img/characters/gandalf.jpg",
+        "puissance": 79,
+        "attacks" : [
+            {
+                "name": "You shall not pass!",
+                "damage": 25
+            },
+            {
+                "name": "Explosion de Lumiere ",
+                "damage": 30
+            },
+            {
+                "name": "Feu de Balrog",
+                "damage": 45
+            }
+        ],
+        "type": "Magicien",
+        "origin": "Le Seigneur des Anneaux"
+    },
+    {
+        "id": 2,
+        "name": "Dumbledore",
+        "img":"assets/img/characters/Dumbledore.jpg",
+        "puissance": 77,
+        "attacks" : [
+            {
+                "name": "Expelliarmus",
+                "damage": 30
+            },
+            {
+                "name": "Incendio",
+                "damage": 50
+            },
+            {
+                "name": "Glacius",
+                "damage": 41
+            }
+        ],
+        "type": "Sorcier",
+        "origin": "Harry Potter"
+    },
+    {
+        "id": 3,
+        "name": "Netero",
+        "img":"assets/img/characters/Netero.webp",
+        "puissance": 86,
+        "attacks" : [
+            {
+                "name": "Bodhisattva",
+                "damage": 40
+            },
+            {
+                "name": "Aura écrasante",
+                "damage": 25
+            },
+            {
+                "name": "Vol",
+                "damage": 15
+            }
+        ],
+        "type": "Chasseur de Hunters",
+        "origin": "Hunter x Hunter"
+    },
+    {
+        "id": 4,
+        "name": "Yamamoto",
+        "img":"assets/img/characters/yamamoto.jpg",
+        "puissance": 85,
+        "attacks" : [
+            {
+                "name": "Ryujin Jakka",
+                "damage": 35
+            },
+            {
+                "name": "Higashi no Kaze",
+                "damage": 30
+            },
+            {
+                "name": "Zanka no Tachi ",
+                "damage": 15
+            }
+        ],
+        "type": "Capitaine de la Soul Society",
+        "origin": "Bleach"
+    },
+    {
+        "id": 5,
+        "name": "Père Fouras",
+        "img":"assets/img/characters/pere-fouras.jpg",
+        "puissance": 40,
+        "attacks" : [
+            {
+                "name": "Énigme redoutable",
+                "damage": 15
+            },
+            {
+                "name": "Evasion enigmatique",
+                "damage": 15
+            }
+        ],
+        "type": "Maître des énigmes",
+        "origin": "Fort Boyard"
+    },
+    {
+        "id": 6,
+        "name": "Garp",
+        "img":"assets/img/characters/Garp.webp",
+        "puissance": 88,
+        "attacks" : [
+            {
+                "name": "Poing du Démon",
+                "damage": 25
+            },
+            {
+                "name": "Coup de Griffe",
+                "damage": 20
+            },
+            {
+                "name": "Galaxy Impact",
+                "damage": 50
+            }
+        ],
+        "type": "Vice-Amiral de la Marine",
+        "origin": "One Piece"
+    },
+    {
+        "id": 7,
+        "name": "Tortue Geniale",
+        "img":"assets/img/characters/mutenroshi.jpg",
+        "puissance": 60,
+        "attacks" : [
+            {
+                "name": "Kamehameha",
+                "damage": 20
+            },
+            {
+                "name": "Eventail Mystique",
+                "damage": 20
+            },
+            {
+                "name": "Danse de la Tortue",
+                "damage": 30
+            }
+        ],
+        "type": "Maître des arts martiaux",
+        "origin": "Dragon Ball"
+    },
+    {
+        "id": 8,
+        "name": "Yoda",
+        "img":"assets/img/characters/Yoda.jpg",
+        "puissance": 82,
+        "attacks" : [
+            {
+                "name": "Maîtrise de la Force",
+                "damage": 40
+            },
+            {
+                "name": "Lancer de Sabre",
+                "damage": 30
+            }
+        ],
+        "type": "Maître Jedi",
+        "origin": "Star Wars"
+    },
+    {
+        "id": 9,
+        "name": "Barbe Blanche",
+        "img":"assets/img/characters/barbe-blanche.webp",
+        "puissance": 90,
+        "attacks" : [
+            {
+                "name": "Gekishin Condamnation",
+                "damage": 50
+            },
+            {
+                "name": "Haki des rois",
+                "damage": 30
+            },
+            {
+                "name": "Séisme",
+                "damage": 25
+            }
+        ],
+        "type": "Pirate légendaire",
+        "origin": "One Piece"
+    },
+    {
+        "id": 10,
+        "name": "Silvers Rayleigh",
+        "img":"assets/img/characters/rayleigh.png",
+        "puissance": 84,
+        "attacks" : [
+            {
+                "name": "Haki des rois",
+                "damage": 30
+            },
+            {
+                "name": "Haki de l'armement",
+                "damage": 25
+            },
+            {
+                "name": "Ryuo",
+                "damage": 40
+            }
+        ],
+        "type": "Pirate légendaire",
+        "origin": "One Piece"
+    },
+    {
+        "id": 11,
+        "name": "zeno zoldyck",
+        "img":"assets/img/characters/zenozoldyck.jpg",
+        "puissance": 83,
+        "attacks" : [
+            {
+                "name": "Dragon Lance",
+                "damage": 45
+            },
+            {
+                "name": "Dragon Dive",
+                "damage": 40
+            }
+        ],
+        "type": "Membre de la Famille Zoldyck",
+        "origin": "Hunter x Hunter"
+    },
+    {
+        "id": 12,
+        "name": "Sarutobi",
+        "img":"assets/img/characters/Sarutobi.jpg",
+        "puissance": 75,
+        "attacks" : [
+            {
+                "name": "Katon: Zukokku",
+                "damage": 25
+            },
+            {
+                "name": "hokage Shiki Jijun Jutsu",
+                "damage": 20                
+            },
+            {
+                "name": "Enma, First Form",
+                "damage": 30
+            }
+        ],
+        "type": "Hokage de Konoha",
+        "origin": "Naruto"
+    },
+    {
+        "id": 13,
+        "name": "Silver Fang",
+        "img":"https://i.pinimg.com/originals/1f/9e/a0/1f9ea0077533e3971d3b5c12a89b0f59.png",
+        "puissance": 75,
+        "attacks" : [
+            {
+                "name": "Poing Destructeur du tigre",
+                "damage": 30
+            },
+            {
+                "name": "Poing Destructeur du Vent",
+                "damage": 20
+            },
+            {
+                "name": "Poing Destructeur du Fer",
+                "damage": 20
+            }
+        ],
+        "type": "Maître des arts martiaux",
+        "origin": "One Punch Man"
+    },    
+    {
+        "id": 14,
+        "name": "Carl",
+        "img":"https://www.lillelanuit.com/wp-content/uploads/2022/12/b8ed83a8c80f100d3f4147aae87152ce_announced_la-haut.jpg",
+        "puissance": 20,
+        "attacks" : [
+            {
+                "name": "Canne à air",
+                "damage": 10
+            },
+            {
+                "name": "barrage de ballons",
+                "damage": 10
+            },
+            {
+                "name": "Maison volante",
+                "damage": 20
+            }
+        ],
+        "type": "Personnage animé",
+        "origin": "La Haut (Up)"
+    },
+    {
+        "id": 15,
+        "name": "Stan Lee",
+        "img":"https://fr.web.img5.acsta.net/c_310_420/pictures/16/01/28/17/11/594812.jpg",
+        "puissance": 35,
+        "attacks" : [
+            {
+                "name": "Cameo Surprise",
+                "damage": 15
+            },
+            {
+                "name": "Création de super-héros",
+                "damage": 30
+            }
+        ],
+        "type": "Créateur de super-héros",
+        "origin": "Univers Marvel"
+    },
+    {
+        "id": 16,
+        "name": "Mathieu",
+        "img":"assets/img/characters/mathieu.jpg",
+        "puissance": 69,
+        "attacks" : [
+            {
+                "name": "Mâäariine",
+                "damage": 20
+            },
+            {
+                "name": "Espèce de gland",
+                "damage": 10
+            },
+            {
+                "name": "File lui ses 30000",
+                "damage": 30
+            },
+            {
+                "name": "ouin-ouin",
+                "damage": 1
+            }
+        ],
+        "type": "Emmerdeur de la Terre",
+        "origin": "DWWM"
+    }
+]
+
+    
+
