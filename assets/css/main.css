@@ -187,6 +187,10 @@ header {
   }
 }
 
+.d-none {
+  display: none;
+}
+
 .health-bar {
   width: 100%;
   height: 20px;

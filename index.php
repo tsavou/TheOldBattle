@@ -4,8 +4,6 @@ $characters = json_decode($json, true);
 
 include("header.php");
 
-$ennemy = $characters[rand(0, count($characters) - 1)];
-
 ?>
 
 <div class="container">
@@ -17,7 +15,7 @@ $ennemy = $characters[rand(0, count($characters) - 1)];
         foreach ($characters as $character) {
         ?>
             <div class="character-card">
-                <a href="battle.php?id=<?= $character["id"] ?>&name=<?= $character["name"] ?>&versus=<?= $ennemy["id"] ?>&ennemy=<?= $ennemy["name"] ?>">
+                <a href="new.php?id=<?= $character["id"] ?>">
                     <img src="<?= $character["img"] ?>" alt="<?= $character["name"] ?>">
                 </a>
 

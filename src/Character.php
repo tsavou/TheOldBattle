@@ -1,5 +1,6 @@
 <?php
 
+require_once("Attack.php");
 
 class Character
 {
@@ -49,4 +50,3 @@ class Character
 
 ?>
 
-<p></p>

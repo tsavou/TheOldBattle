@@ -1,95 +1,46 @@
 <?php
-session_start();
-
-
-
-include("src/classes.php");
+require("src/Character.php");
 include("header.php");
 
-// récupération du perso selectionné
-if (isset($_GET["id"])) {
-    foreach ($characters as $character) {
-        if ($character->id == $_GET["id"]) {
-            $MyCharacter = $character;
-        }
+session_start();
+
+if (!isset($_SESSION["player"])) {
+    header("location:./");
+}
+
+function doAttack(Character $attacker, Character $defender, int $index = null)
+{
+    $attacks = $attacker->getAttacks();
+    if (!isset($index)) {
+        $index = array_rand($attacks);
     }
-}
-// récupération de l'adversaire
-if (isset($_GET["versus"])) {
-    foreach ($characters as $character) {
-        if ($character->id == $_GET["versus"]) {
-            $ennemy = $character;
-        }
-    }
-}
+    $attack = $attacks[$index];
 
+    $shot = $attacker->attack($attack);
+    $defender->isAttacked($shot);
 
-
-
-// Gestion des attaques, du combat et de la santé
-$isStarted = false;
-$isOver = false;
-
-
-
-
-if (!isset($_SESSION['ennemy_hp'])) {
-    $_SESSION['ennemy_hp'] = $ennemy->health;
+    $_SESSION["fightSummary"] .= "<p>{$attacker->name} utilise {$attack->name}</p>";
+    $_SESSION["fightSummary"] .= "<p>Cela inflige {$shot} de dommages à {$defender->name}</p>";
 }
 
-if (!isset($_SESSION['my_hp'])) {
-    $_SESSION['my_hp'] = $MyCharacter->health;
+if (isset($_GET["attack"])) {
+    doAttack($_SESSION["player"], $_SESSION["ia"], $_GET["attack"]);
+
+    // au tour de ton adversaire
+    doAttack($_SESSION["ia"], $_SESSION["player"]);
 }
 
-if ($_SESSION['my_hp'] <= 0 or $_SESSION['ennemy_hp'] <= 0) {
-    $isOver = true;
-    unset($victory);
-    unset($damage);
-    unset($counter_damage);
+if ($_SESSION["ia"]->getHealth() <= 0) {
+    // Bien joué ;)
+    header("location:./endgame.php?win=1");
+} elseif ($_SESSION["player"]->getHealth() <= 0) {
+    // Game over :(
+    header("location:./endgame.php?win=0");
 }
 
-if (!$isOver) {
-
-
-    if (isset($_GET["attack"])) {
-        $isStarted = true;
-        $selectedattack = $_GET["attack"];
-        foreach ($MyCharacter->attacks as $attack) {
-            if ($attack["name"] == $selectedattack) {
-                $attackname = $attack["name"];
-                $damage = $attack["damage"];
-
-                // Réduction des points de vie de l'adversaire
-                $_SESSION['ennemy_hp'] -= $damage;
-            }
-        }
-
-        // riposte de l'adversaire
-        $attackindex = rand(0, count($ennemy->attacks) - 1);
-        $counter = $ennemy->attacks[$attackindex];
-        $counter_damage = $counter["damage"];
-
-        // Réduction de points de vie de mon perso
-        $_SESSION['my_hp'] -= $counter_damage;
-    }
-    $ennemy_hp = $_SESSION['ennemy_hp'];
-    $my_hp = $_SESSION['my_hp'];
-
-    if ($_SESSION['ennemy_hp'] <= 0) {
-        $victory = true;
-        $isOver = true;
-    } else if ($_SESSION['my_hp'] <= 0) {
-        $victory = false;
-        $isOver = true;
-    }
-} else {
-    $_SESSION['ennemy_hp'] = $ennemy->health;
-    $_SESSION['my_hp'] = $MyCharacter->health;
-    $ennemy_hp = $_SESSION['ennemy_hp'];
-    $my_hp = $_SESSION['my_hp'];
-}
-
-
+$player = $_SESSION["player"];
+$ia = $_SESSION["ia"];
+$fightSummary = $_SESSION["fightSummary"];
 ?>
 
 
@@ -98,69 +49,31 @@ if (!$isOver) {
 
     <div class="battle flex">
         <div class="player left">
-            <h3> <?= $MyCharacter->name ?></h3>
+            <h3> <?= $player->name ?></h3>
             <div class="puissance flex">
-                <?= $MyCharacter->puissance ?>
+                <?= $player->puissance ?>
             </div>
-            <img src="<?= $MyCharacter->img ?>" alt="<?= $MyCharacter->name ?>">
+            <img src="<?= $player->img ?>" alt="<?= $player->name ?>">
 
-            <?php if (!$isOver) { ?>
-                <label for="health"></label>
-                <progress class="health-bar" id="health" max="100" value="<?= $my_hp ?>"></progress>
-            <?php } ?>
+
+            <label class="d-none" for="health">Santé :</label>
+            <progress class="health-bar" id="health" max="100" value="<?= $player->getHealth()?>"> <?= $player->getHealth() ?>% </progress>
+
         </div>
 
         <div class="versus flex">
             <strong>vs</strong>
-            <?php if ($isStarted && !$isOver) {
-            ?>
-                <ul>
-                    <li class="my-player">
-                        <strong><?= $MyCharacter->name ?></strong> utilise <strong><?= $attackname ?> </strong>
-                        et inflige <strong><?= $damage ?></strong> points de dégats à <strong><?= $ennemy->name ?></strong>
-                    </li>
-
-                    <li class="ennemy"> <strong><?= $ennemy->name ?></strong> riposte avec <strong><?= $counter["name"] ?></strong> et
-                        inflige <strong><?= $counter["damage"] ?></strong> points de dégats à <strong><?= $MyCharacter->name ?></strong>
-                    </li>
-                </ul>
-            <?php
-            } elseif (!$isStarted && !$isOver) {
-            ?>
-                <ul>
-                    <li> Sélectionner une attaque pour commencer le combat </li>
-                </ul>
-            <?php
-            } elseif ($isOver && $victory) {
-            ?>
-                <ul>
-                    <li class="my-player"> <strong> Victoire ! </strong></li>
-                </ul>
-                <a class="newgame" href="index.php"> Nouveau combat</a>
-            <?php
-            } elseif ($isOver && !$victory) {
-            ?>
-                <ul>
-                    <li class="ennemy"> <strong> Perdu ! </strong> </li>
-                </ul>
-                <a class="newgame" href="index.php"> Nouveau combat</a>
-            <?php
-            }
-            ?>
-
+            <p> <?= $fightSummary ?></p>
         </div>
 
         <div class="player right">
-            <h3> <?= $ennemy->name ?></h3>
+            <h3> <?= $ia->name ?></h3>
             <div class="puissance flex">
-                <?= $ennemy->puissance ?>
+                <?= $ia->puissance ?>
             </div>
-            <img src="<?= $ennemy->img ?>" alt="<?= $ennemy->name ?>">
-
-            <?php if (!$isOver) { ?>
-                <label for="health"></label>
-                <progress class="health-bar" id="health" max="100" value="<?= $ennemy_hp ?>"></progress>
-            <?php } ?>
+            <img src="<?= $ia->img ?>" alt="<?= $ia->name ?>">
+                <label class="d-none" for="health">Santé :</label>
+                <progress class="health-bar" id="health" max="100" value="<?= $ia->getHealth() ?>"> <?= $ia->getHealth() ?>%"></progress>
         </div>
     </div>
 
@@ -169,11 +82,10 @@ if (!$isOver) {
 
 
         <ul>
-            <?php foreach ($MyCharacter->attacks as $attack) {
+            <?php foreach ($player->getAttacks() as $index => $attack) {
             ?>
                 <li>
-                    <a href="battle.php?id=<?= $MyCharacter->id ?>&name=<?= $MyCharacter->name ?>&versus=<?= $ennemy->id ?>&ennemy=<?= $ennemy->name ?>&attack=<?= $attack["name"] ?>">
-                        <?= $attack["name"] ?>
+                    <a href="battle.php?attack=<?= $index ?>"><?= $attack->name ?>
                     </a>
                 </li>
 
