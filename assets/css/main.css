@@ -32,6 +32,7 @@ body {
   background-image: url(../img/arene.jpg);
   background-size: cover;
   height: 100vh;
+  text-transform: lowercase;
   font-family: "starjedi";
   color: #111111;
 }
@@ -227,11 +228,16 @@ header {
   text-wrap: wrap;
   line-height: 1.5;
 }
-.versus ul .my-player strong {
-  color: #03ba03;
+.versus ul strong {
+  color: rgb(220, 220, 0);
 }
-.versus ul .ennemy strong {
+.versus ul .my-player {
+  color: #03ba03;
+  text-transform: capitalize;
+}
+.versus ul .ennemy {
   color: #a80404;
+  text-transform: capitalize;
 }
 .versus .newgame {
   color: #ffffff;

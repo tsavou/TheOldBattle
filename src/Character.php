@@ -35,7 +35,7 @@ class Character
     }
     
     public function attack(Attack $attackObj) {
-        $shot = ($attackObj->damage * $this->puissance) / 100;
+        $shot = round(($attackObj->damage * $this->puissance) / 100 );
         return $shot;
     }
 

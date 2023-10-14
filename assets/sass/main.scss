@@ -14,6 +14,7 @@ body {
     background-image: url(../img/arene.jpg);
     background-size: cover;
     height: 100vh;
+    text-transform: lowercase;
     font-family: "starjedi";
     color: $color-primary;
 }
@@ -189,6 +190,7 @@ header {
     }
 
 }
+
 .d-none {
     display: none;
 }
@@ -243,21 +245,24 @@ header {
             margin: 1rem 0;
             text-wrap: wrap;
             line-height: 1.5;
+        }
 
-
+        strong {
+            color: rgb(220, 220, 0);
         }
 
         .my-player {
-            strong {
-                color: $color-success;
-            }
+            color: $color-success;
+            text-transform: capitalize;
         }
 
         .ennemy {
-            strong {
-                color: $color-ennemy;
-            }
+            color: $color-ennemy;
+            text-transform: capitalize;
+
         }
+
+
     }
 
     .newgame {
