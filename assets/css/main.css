@@ -63,6 +63,8 @@ img {
 h1 {
   text-align: center;
   font-size: 2.4rem;
+  margin: 0;
+  padding: 0;
 }
 @media screen and (max-width: 768px) {
   h1 {
@@ -267,6 +269,7 @@ header {
   display: flex;
   gap: 2%;
   align-items: center;
+  margin: 1rem 0;
 }
 @media screen and (max-width: 768px) {
   .attacks {
@@ -276,6 +279,8 @@ header {
 .attacks h3 {
   font-size: 1.6rem;
   color: #ffffff;
+  margin: 0;
+  padding: 0;
 }
 @media screen and (max-width: 768px) {
   .attacks h3 {
@@ -290,6 +295,11 @@ header {
   gap: 2%;
   font-size: 1rem;
 }
+@media screen and (max-width: 768px) {
+  .attacks ul {
+    flex-wrap: wrap;
+  }
+}
 .attacks ul li a {
   background-color: #ffffff;
   border-radius: 30px;
@@ -303,6 +313,11 @@ header {
 }
 .attacks ul li:hover {
   scale: 1.1;
+}
+@media screen and (max-width: 768px) {
+  .attacks ul li {
+    margin: 1rem 0;
+  }
 }
 .attacks ul #escape {
   background-color: #a80404;

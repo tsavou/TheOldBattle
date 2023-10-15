@@ -47,6 +47,7 @@ img {
 h1 {
     text-align: center;
     font-size: $title-size;
+    @include no-margin;
 
     @media screen and (max-width: $md-breakpoint) {
        font-size: 1.5rem;        
@@ -293,15 +294,16 @@ header {
     display: flex;
     gap: 2%;
     align-items: center;
+    margin: 1rem 0;
 
     @media screen and (max-width: $md-breakpoint) {
-        flex-direction: column;
-        
+        flex-direction: column;       
     }
 
     h3 {
         font-size: 1.6rem;
         color: $color-secondary;
+        @include no-margin;
 
         @media screen and (max-width: $md-breakpoint) {
             font-size: 1rem;
@@ -315,6 +317,10 @@ header {
         text-wrap: nowrap;
         gap: 2%;
         font-size: 1rem;
+
+        @media screen and (max-width: $md-breakpoint) {
+            flex-wrap: wrap;
+        }
 
         li {
             a {
@@ -332,6 +338,10 @@ header {
 
             &:hover {
                 scale: 1.1;
+            }
+
+            @media screen and (max-width: $md-breakpoint) {
+               margin: 1rem 0;               
             }
 
         }
