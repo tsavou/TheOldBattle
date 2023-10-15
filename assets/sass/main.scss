@@ -28,6 +28,7 @@ img {
     max-width: 100%;
 }
 
+
 .container {
     padding: 0 3rem;
 
@@ -47,6 +48,11 @@ h1 {
     text-align: center;
     font-size: $title-size;
 
+    @media screen and (max-width: $md-breakpoint) {
+       font-size: 1.5rem;        
+    }
+
+
 }
 
 li {
@@ -59,7 +65,15 @@ header {
     padding: 1rem 0;
     font-size: 4rem;
     text-align: center;
+
+    @media screen and (max-width: $md-breakpoint) {
+        padding: 0;
+        font-size: 2.5rem;
+        
+    }
 }
+
+
 
 // INDEX
 
@@ -158,6 +172,11 @@ header {
     h3 {
         text-align: center;
         @include no-margin;
+
+        @media screen and (max-width: $md-breakpoint) {
+           font-size: 1.2rem;
+           font-style: italic;            
+        }
     }
 
     .puissance {
@@ -181,7 +200,12 @@ header {
 
         @media screen and (min-width: $xxl-breakpoint) {
             height: 600px;
-        }      
+        }
+        
+        @media screen and (max-width: $md-breakpoint) {
+            height: 20vh;       
+        
+        }
 
     }
 
@@ -228,6 +252,11 @@ header {
     justify-content: space-evenly;
     align-items: center;
 
+    @media screen and (max-width: $md-breakpoint) {
+        height: 20vh;
+        font-size: 1.2rem;
+    }
+
 
     ul {
         font-family: Arial, Helvetica, Verdana, Geneva, Tahoma, sans-serif;
@@ -265,9 +294,18 @@ header {
     gap: 2%;
     align-items: center;
 
+    @media screen and (max-width: $md-breakpoint) {
+        flex-direction: column;
+        
+    }
+
     h3 {
         font-size: 1.6rem;
         color: $color-secondary;
+
+        @media screen and (max-width: $md-breakpoint) {
+            font-size: 1rem;
+        }
     }
 
     ul {
@@ -284,6 +322,11 @@ header {
                 border-radius: 30px;
                 padding: 1rem;
                 cursor: pointer;
+
+                @media screen and (max-width: $md-breakpoint) {
+                    padding: 0.5rem;
+                    
+                }
 
             }
 

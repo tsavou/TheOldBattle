@@ -64,6 +64,11 @@ h1 {
   text-align: center;
   font-size: 2.4rem;
 }
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
 
 li {
   list-style: none;
@@ -73,6 +78,12 @@ header {
   padding: 1rem 0;
   font-size: 4rem;
   text-align: center;
+}
+@media screen and (max-width: 768px) {
+  header {
+    padding: 0;
+    font-size: 2.5rem;
+  }
 }
 
 .characters {
@@ -159,6 +170,12 @@ header {
   margin: 0;
   padding: 0;
 }
+@media screen and (max-width: 768px) {
+  .player h3 {
+    font-size: 1.2rem;
+    font-style: italic;
+  }
+}
 .player .puissance {
   border-radius: 50%;
   width: 40px;
@@ -180,6 +197,11 @@ header {
 @media screen and (min-width: 1400px) {
   .player img {
     height: 600px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .player img {
+    height: 20vh;
   }
 }
 
@@ -211,6 +233,12 @@ header {
   justify-content: space-evenly;
   align-items: center;
 }
+@media screen and (max-width: 768px) {
+  .versus {
+    height: 20vh;
+    font-size: 1.2rem;
+  }
+}
 .versus ul {
   font-family: Arial, Helvetica, Verdana, Geneva, Tahoma, sans-serif;
   background-color: rgba(0, 0, 0, 0.6117647059);
@@ -240,9 +268,19 @@ header {
   gap: 2%;
   align-items: center;
 }
+@media screen and (max-width: 768px) {
+  .attacks {
+    flex-direction: column;
+  }
+}
 .attacks h3 {
   font-size: 1.6rem;
   color: #ffffff;
+}
+@media screen and (max-width: 768px) {
+  .attacks h3 {
+    font-size: 1rem;
+  }
 }
 .attacks ul {
   display: flex;
@@ -257,6 +295,11 @@ header {
   border-radius: 30px;
   padding: 1rem;
   cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .attacks ul li a {
+    padding: 0.5rem;
+  }
 }
 .attacks ul li:hover {
   scale: 1.1;
