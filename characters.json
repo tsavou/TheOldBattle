@@ -3,7 +3,7 @@
         "id": 1,
         "name": "Gandalf",
         "img":"assets/img/characters/gandalf.jpg",
-        "puissance": 79,
+        "puissance": 81,
         "attacks" : [
             {
                 "name": "You shall not pass!",
@@ -15,7 +15,7 @@
             },
             {
                 "name": "Feu de Balrog",
-                "damage": 45
+                "damage": 40
             }
         ],
         "type": "Magicien",
@@ -25,7 +25,7 @@
         "id": 2,
         "name": "Dumbledore",
         "img":"assets/img/characters/Dumbledore.jpg",
-        "puissance": 77,
+        "puissance": 76,
         "attacks" : [
             {
                 "name": "Expelliarmus",
@@ -91,11 +91,11 @@
         "id": 5,
         "name": "Père Fouras",
         "img":"assets/img/characters/pere-fouras.jpg",
-        "puissance": 40,
+        "puissance": 30,
         "attacks" : [
             {
                 "name": "Énigme redoutable",
-                "damage": 15
+                "damage": 25
             },
             {
                 "name": "Evasion enigmatique",
@@ -109,7 +109,7 @@
         "id": 6,
         "name": "Garp",
         "img":"assets/img/characters/Garp.webp",
-        "puissance": 88,
+        "puissance": 86,
         "attacks" : [
             {
                 "name": "Poing du Démon",
@@ -131,7 +131,7 @@
         "id": 7,
         "name": "Tortue Geniale",
         "img":"assets/img/characters/mutenroshi.jpg",
-        "puissance": 60,
+        "puissance": 68,
         "attacks" : [
             {
                 "name": "Kamehameha",
@@ -153,7 +153,7 @@
         "id": 8,
         "name": "Yoda",
         "img":"assets/img/characters/Yoda.jpg",
-        "puissance": 82,
+        "puissance": 86,
         "attacks" : [
             {
                 "name": "Maîtrise de la Force",
@@ -171,7 +171,7 @@
         "id": 9,
         "name": "Barbe Blanche",
         "img":"assets/img/characters/barbe-blanche.webp",
-        "puissance": 90,
+        "puissance": 95,
         "attacks" : [
             {
                 "name": "Gekishin Condamnation",
@@ -233,7 +233,7 @@
         "id": 12,
         "name": "Sarutobi",
         "img":"assets/img/characters/Sarutobi.jpg",
-        "puissance": 75,
+        "puissance": 78,
         "attacks" : [
             {
                 "name": "Katon: Zukokku",
@@ -255,7 +255,7 @@
         "id": 13,
         "name": "Silver Fang",
         "img":"https://i.pinimg.com/originals/1f/9e/a0/1f9ea0077533e3971d3b5c12a89b0f59.png",
-        "puissance": 75,
+        "puissance": 76,
         "attacks" : [
             {
                 "name": "Poing Destructeur du tigre",
@@ -315,29 +315,25 @@
     },
     {
         "id": 16,
-        "name": "Mathieu",
-        "img":"assets/img/characters/mathieu.jpg",
-        "puissance": 69,
+        "name": "Obi-Wan Kenobi",
+        "img":"assets/img/characters/Obi-Wan.jpg",
+        "puissance": 75,
         "attacks" : [
             {
-                "name": "Mâäariine",
-                "damage": 20
+                "name": "Maîtrise de la Force",
+                "damage": 40
             },
             {
-                "name": "Espèce de gland",
-                "damage": 10
-            },
-            {
-                "name": "File lui ses 30000",
+                "name": "Lancer de Sabre",
                 "damage": 30
             },
             {
-                "name": "ouin-ouin",
-                "damage": 1
+                "name": "Influence mentale",
+                "damage": 15
             }
         ],
-        "type": "Emmerdeur de la Terre",
-        "origin": "DWWM"
+        "type": "Maître Jedi",
+        "origin": "Star Wars"
     }
 ]
 

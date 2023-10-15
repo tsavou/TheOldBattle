@@ -34,11 +34,7 @@ img {
     @media screen and (min-width: $xl-breakpoint) {
         padding: 0 10rem;
     }
-
-    @media screen and (max-width: $sm-breakpoint) {
-        padding: 0;
-
-    }
+   
 
 }
 
@@ -148,7 +144,7 @@ header {
     justify-content: space-between;
     gap: 2%;
 
-    @media screen and (max-width: $lg-breakpoint) {
+    @media screen and (max-width: $md-breakpoint) {
         flex-direction: column;
         align-items: center;
 
@@ -185,7 +181,7 @@ header {
 
         @media screen and (min-width: $xxl-breakpoint) {
             height: 600px;
-        }
+        }      
 
     }
 

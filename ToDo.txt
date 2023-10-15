@@ -1,9 +1,0 @@
-
-
-- corriger avec les classes et objet
-- tout pazsser en method dans les classes
--faire une methode de calcul des dommage en fonction de la puissance (method clsses..)
--ajouter un son a la selection des perso
--Changer la police pour eviter le pb des maj ou tout passer en lowercase
-- revoir les valeurs des dommages des attaques
-
