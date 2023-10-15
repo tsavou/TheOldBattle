@@ -5,21 +5,32 @@ if (isset($_GET["win"])) {
         $win = false;
     }
 }
-session_start();
 include("header.php");
 
 ?>
 
-<div class="container">
+<div class="endbattle container">
 
-    <p>
-        <?php
-        echo $win ? "victoire ! félicitations, tu remportes le combat !" : "game over !";
-        ?>
-    </p>
-    <div class="img-wrapper">
-        
-    </div>
-    <a class="btn" href="./">Nouvelle Partie</a>
+
+    <?php if ($win) { ?>
+        <p class="victory">Victoire ! </p>
+        <p>Félicitations, tu remportes le combat !</p>
+        <div class="img-wrapper">
+            <img src="assets/img/victory.webp" alt="">
+        </div>
+
+    <?php } else { ?>
+        <p class="defeat">Game over !</p>
+        <p>Tu as perdu, recommence !</p>
+        <div class="img-wrapper">
+            <img src="assets/img/defeat.jpg" alt="">
+        </div>
+
+    <?php }
+    ?>
+
+
+
+    <a class="newgame" href="./">Nouvelle Partie</a>
 
 </div>

@@ -233,7 +233,6 @@ header {
     align-items: center;
 
 
-
     ul {
         font-family: Arial, Helvetica, Verdana, Geneva, Tahoma, sans-serif;
         background-color: #0000009c;
@@ -261,25 +260,8 @@ header {
             text-transform: capitalize;
 
         }
-
-
     }
-
-    .newgame {
-        color: $color-secondary;
-        background-color: $color-primary;
-        border-radius: 30px;
-        padding: 1rem;
-        cursor: pointer;
-        width: fit-content;
-
-
-
-
-        &:hover {
-            scale: 1.1;
-        }
-    }
+    
 }
 
 .attacks {
@@ -320,8 +302,45 @@ header {
             color: $color-secondary;
         }
 
+    }
+}
 
+// end of battle
+
+.endbattle {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3%;
+
+    .victory {
+        font-size: 3rem;
+        color: $color-success;
     }
 
+    .defeat {
+        font-size: 3rem;
+        color: $color-ennemy;
+    }
 
+.img-wrapper{
+    width: 40vw;
+
+}
+
+.newgame {
+    color: rgb(220, 220, 0);
+    background-color: $color-primary;
+    border-radius: 30px;
+    padding: 1.5rem;
+    cursor: pointer;
+    width: fit-content;
+
+    &:hover {
+        scale: 1.1;
+        color: $color-primary;
+        background-color:rgb(220, 220, 0);
+    }
+}
 }

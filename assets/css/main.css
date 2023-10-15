@@ -239,17 +239,6 @@ header {
   color: #a80404;
   text-transform: capitalize;
 }
-.versus .newgame {
-  color: #ffffff;
-  background-color: #111111;
-  border-radius: 30px;
-  padding: 1rem;
-  cursor: pointer;
-  width: fit-content;
-}
-.versus .newgame:hover {
-  scale: 1.1;
-}
 
 .attacks {
   display: flex;
@@ -280,6 +269,38 @@ header {
 .attacks ul #escape {
   background-color: #a80404;
   color: #ffffff;
+}
+
+.endbattle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3%;
+}
+.endbattle .victory {
+  font-size: 3rem;
+  color: #03ba03;
+}
+.endbattle .defeat {
+  font-size: 3rem;
+  color: #a80404;
+}
+.endbattle .img-wrapper {
+  width: 40vw;
+}
+.endbattle .newgame {
+  color: rgb(220, 220, 0);
+  background-color: #111111;
+  border-radius: 30px;
+  padding: 1.5rem;
+  cursor: pointer;
+  width: fit-content;
+}
+.endbattle .newgame:hover {
+  scale: 1.1;
+  color: #111111;
+  background-color: rgb(220, 220, 0);
 }
 
 /*# sourceMappingURL=main.css.map */
