@@ -30,9 +30,14 @@ include("header.php");
         ?>
     </div>
 
+    <audio id="hover-sound">
+        <source src="assets/audio/hover.wav" type="audio/mpeg">
+    </audio>
+   
+
 </div>
 
-
+<script src="assets/js/soundeffects.js"></script>
 </body>
 
 </html>
